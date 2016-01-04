@@ -35,5 +35,8 @@
     "eslint": "^1.10.3",
     "eslint-plugin-babel": "^3.0.0",
     "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "fs-promise": "^0.3.1"
   }
 }
