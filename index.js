@@ -11,17 +11,8 @@ function readCfg (dir) {
                 return JSON.parse(data);
             }
             catch (err) {
-                throw new Error('package.json is not a valid JSON file.');
+                throw new Error('package.json is not a valid JSON-file.');
             }
-        })
-        .then(cfg => {
-            if (!cfg.name)
-                throw new Error("package.json doesn't have `name` specified.");
-
-            if (!cfg.version)
-                throw new Error("package.json doesn't have `version` specified.");
-
-            return cfg;
         });
 }
 

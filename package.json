@@ -1,7 +1,7 @@
 {
   "name": "pkgd",
   "version": "1.0.0",
-  "description": "Get package publish info: config, file list, size on disk.",
+  "description": "Get package publish info: config, file and dir list.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -32,6 +32,8 @@
   "homepage": "https://github.com/inikulin/pkg-publish-info#readme",
   "devDependencies": {
     "babel-eslint": "^4.1.6",
+    "cp-sugar": "^1.0.0",
+    "del": "^2.2.0",
     "eslint": "^1.10.3",
     "eslint-plugin-babel": "^3.0.0",
     "mocha": "^2.3.4"
