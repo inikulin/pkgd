@@ -1,7 +1,7 @@
 {
   "name": "pkgd",
   "version": "1.0.0",
-  "description": "Get package publish info: config, file and dir list.",
+  "description": "Get package publish info: package.json and file list.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -39,6 +39,8 @@
     "mocha": "^2.3.4"
   },
   "dependencies": {
-    "fs-promise": "^0.3.1"
+    "fs-promise": "^0.3.1",
+    "fstream-npm": "^1.0.7",
+    "normalize-path": "^2.0.1"
   }
 }

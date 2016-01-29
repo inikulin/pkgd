@@ -1,7 +1,7 @@
 # pkgd
 [![Build Status](https://api.travis-ci.org/inikulin/pkgd.svg)](https://travis-ci.org/inikulin/pkgd)
 
-*Get package publish info: config, file and dir list.*
+*Get package publish info: package.json and file list.*
 
 ## Install
 ```

@@ -20,8 +20,8 @@ afterEach(() => exec('git reset --hard HEAD'));
 it('Should read and parse package.json', () => {
     return pkgd()
         .then(pkgInfo => {
-            assert.strictEqual(pkgInfo.name, 'testing-repo');
-            assert.strictEqual(pkgInfo.version, '1.3.77');
+            assert.strictEqual(pkgInfo.cfg.name, 'testing-repo');
+            assert.strictEqual(pkgInfo.cfg.version, '1.3.77');
         });
 });
 
@@ -44,5 +44,18 @@ it('Should fail with error if package.json is not a valid JSON-file', () => {
         })
         .catch(err => {
             assert.strictEqual(err.message, 'package.json is not a valid JSON-file.');
+        });
+});
+
+it('Should collect package files', () => {
+    return pkgd()
+        .then(pkgInfo => {
+            assert.deepEqual(pkgInfo.files, [
+                'package.json',
+                'README.md',
+                'lib/1.js',
+                'lib/2.js',
+                'lib/3.js'
+            ]);
         });
 });
