@@ -9,6 +9,9 @@
   "engines": {
     "node": ">=4.0.0"
   },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "eslint index.js test && mocha"
   },
