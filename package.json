@@ -1,6 +1,6 @@
 {
   "name": "pkgd",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Get package publish info: package.json and file list.",
   "main": "./lib/index.js",
   "files": [
@@ -42,14 +42,12 @@
     "eslint": "^1.10.3",
     "eslint-plugin-babel": "^3.0.0",
     "mocha": "^2.3.4",
-    "publish-please": "^2.0.0"
+    "publish-please": "^2.1.1"
   },
   "dependencies": {
     "babel-runtime": "^6.9.0",
     "fs-promise": "^0.3.1",
     "fstream-npm": "^1.0.7",
     "normalize-path": "^2.0.1"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "pkgd@1.1.0"
+  }
 }
