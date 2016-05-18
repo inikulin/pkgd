@@ -1,19 +1,15 @@
 {
   "name": "pkgd",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Get package publish info: package.json and file list.",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "engines": {
-    "node": ">=4.0.0"
-  },
+  "main": "./lib/index.js",
   "files": [
     "lib"
   ],
   "scripts": {
-    "test": "eslint index.js test && mocha"
+    "test": "eslint bin src test && rm -rf lib && babel src -d lib &&  mocha",
+    "publish-please": "publish-please",
+    "prepublish": "publish-please guard"
   },
   "repository": {
     "type": "git",
@@ -27,23 +23,33 @@
     "package.json",
     "size"
   ],
-  "author": "Ivan Nikulin (ifaaan@gmail.com)",
+  "author": {
+    "name": "Ivan Nikulin",
+    "url": "ifaaan@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/inikulin/pkg-publish-info/issues"
   },
   "homepage": "https://github.com/inikulin/pkg-publish-info#readme",
   "devDependencies": {
+    "babel-cli": "^6.9.0",
     "babel-eslint": "^4.1.6",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
     "cp-sugar": "^1.0.0",
     "del": "^2.2.0",
     "eslint": "^1.10.3",
     "eslint-plugin-babel": "^3.0.0",
-    "mocha": "^2.3.4"
+    "mocha": "^2.3.4",
+    "publish-please": "^2.0.0"
   },
   "dependencies": {
+    "babel-runtime": "^6.9.0",
     "fs-promise": "^0.3.1",
     "fstream-npm": "^1.0.7",
     "normalize-path": "^2.0.1"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "pkgd@1.1.0"
 }

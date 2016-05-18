@@ -2,7 +2,7 @@ const assert    = require('assert');
 const del       = require('del');
 const writeFile = require('fs-promise').writeFile;
 const exec      = require('cp-sugar').exec;
-const pkgd      = require('../');
+const pkgd      = require('../lib');
 
 before(() => {
     return del('testing-repo')
@@ -50,12 +50,12 @@ it('Should fail with error if package.json is not a valid JSON-file', () => {
 it('Should collect package files', () => {
     return pkgd()
         .then(pkgInfo => {
-            assert.deepEqual(pkgInfo.files, [
+            assert.deepEqual(pkgInfo.files.sort(), [
                 'package.json',
                 'README.md',
                 'lib/1.js',
                 'lib/2.js',
                 'lib/3.js'
-            ]);
+            ].sort());
         });
 });
