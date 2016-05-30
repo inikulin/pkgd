@@ -1,8 +1,15 @@
-const assert    = require('assert');
-const del       = require('del');
-const writeFile = require('fs-promise').writeFile;
-const exec      = require('cp-sugar').exec;
-const pkgd      = require('../lib');
+const assert  = require('assert');
+const del     = require('del');
+const fs      = require('fs');
+const Promise = require('pinkie-promise');
+const exec    = require('cp-sugar').exec;
+const pkgd    = require('../lib');
+
+function writeFile (path, data) {
+    return new Promise(resolve => {
+        fs.writeFile(path, data, resolve);
+    });
+}
 
 before(() => {
     return del('testing-repo')

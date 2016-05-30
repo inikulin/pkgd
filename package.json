@@ -1,13 +1,19 @@
 {
   "name": "pkgd",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Get package publish info: package.json and file list.",
   "main": "./lib/index.js",
   "files": [
     "lib"
   ],
   "scripts": {
-    "test": "eslint bin src test && rm -rf lib && babel src -d lib &&  mocha",
+    "lint": "eslint bin src test",
+    "clean": "rm -rf lib",
+    "clean-test": "rm test/__test-compiled__.js",
+    "compile-test": "babel test/test.js --out-file test/__test-compiled__.js",
+    "compile": "babel src -d lib",
+    "build": "npm run clean && npm run compile",
+    "test": "npm run lint && npm run build && npm run compile-test && mocha test/__test-compiled__.js && npm run clean-test",
     "publish-please": "publish-please",
     "prepublish": "publish-please guard"
   },
@@ -45,9 +51,8 @@
     "publish-please": "^2.1.1"
   },
   "dependencies": {
-    "babel-runtime": "^6.9.0",
-    "fs-promise": "^0.3.1",
     "fstream-npm": "^1.0.7",
-    "normalize-path": "^2.0.1"
+    "normalize-path": "^2.0.1",
+    "pinkie-promise": "^2.0.1"
   }
 }

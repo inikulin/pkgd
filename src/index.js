@@ -1,8 +1,20 @@
 const joinPath   = require('path').join;
 const relative   = require('path').relative;
 const normalize  = require('normalize-path');
-const readFile   = require('fs-promise').readFile;
+const fs         = require('fs');
+const Promise    = require('pinkie-promise');
 const fstreamNpm = require('fstream-npm');
+
+function readFile (path) {
+    return new Promise((resolve, reject) => {
+        fs.readFile(path, (err, data) => {
+            if (err)
+                reject(err);
+            else
+                resolve(data.toString());
+        });
+    });
+}
 
 function readCfg (dir) {
     return readFile(joinPath(dir, 'package.json'))
