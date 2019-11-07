@@ -45,7 +45,7 @@
     "babel-preset-es2015": "^6.9.0",
     "cp-sugar": "^1.0.0",
     "del": "^2.2.0",
-    "eslint": "^1.10.3",
+    "eslint": "^6.6.0",
     "eslint-plugin-babel": "^3.0.0",
     "mocha": "^2.3.4",
     "publish-please": "^2.1.1"
